@@ -710,26 +710,86 @@ body {
     font-size: 1.1rem;
 }
 
-/* Mobile Responsiveness */
+/* Reset & Global Mobile Optimizations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: max(16px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(36px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    position: relative;
+}
+
+/* Card Mobile Active Touch State */
+.link-card {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.link-card:active {
+    transform: scale(0.985);
+    background: var(--bg-card-hover);
+}
+
+.action-btn:active,
+.action-icon-btn:active,
+.control-btn:active {
+    transform: scale(0.92);
+}
+
+/* Mobile Responsiveness & Breakpoints */
 @media (max-width: 480px) {
-    body {
-        padding: 14px 10px 32px;
+    .full-logo-wrapper {
+        max-width: 270px;
+        padding: 4px 0;
+    }
+
+    .top-full-logo {
+        max-width: 250px;
+    }
+
+    .top-controls {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .control-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
     }
 
     .link-card {
         padding: 12px 12px;
         gap: 10px;
+        border-radius: 16px;
     }
 
     .card-icon-box {
         width: 44px;
         height: 44px;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         border-radius: 12px;
     }
 
     .card-title {
-        font-size: 0.95rem;
+        font-size: 0.94rem;
     }
 
     .card-subtitle {
@@ -741,13 +801,69 @@ body {
     }
 
     .action-btn {
-        padding: 7px 13px;
-        font-size: 0.8rem;
+        padding: 8px 13px;
+        font-size: 0.78rem;
+        min-height: 38px;
+        border-radius: 10px;
     }
 
     .action-icon-btn {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
         font-size: 0.88rem;
+        border-radius: 10px;
+    }
+}
+
+/* Compact Mobile Screens (iPhone SE, 320px - 360px) */
+@media (max-width: 370px) {
+    body {
+        padding: 10px 8px 24px;
+    }
+
+    .full-logo-wrapper {
+        max-width: 230px;
+    }
+
+    .top-full-logo {
+        max-width: 215px;
+    }
+
+    .link-card {
+        padding: 10px 10px;
+        gap: 8px;
+    }
+
+    .card-icon-box {
+        width: 38px;
+        height: 38px;
+        font-size: 1.15rem;
+        border-radius: 10px;
+    }
+
+    .card-title {
+        font-size: 0.88rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .card-actions {
+        gap: 4px;
+    }
+
+    .action-btn {
+        padding: 6px 10px;
+        font-size: 0.74rem;
+        min-height: 34px;
+        border-radius: 8px;
+    }
+
+    .action-icon-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.82rem;
+        border-radius: 8px;
     }
 }
