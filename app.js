@@ -145,29 +145,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Theme Toggle (Dark / Light)
-    const storedTheme = localStorage.getItem('mkc_theme');
-    if (storedTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeToggleBtn.querySelector('i').className = 'fa-solid fa-sun';
+    // 5. Automatic System Theme Detection & Sync
+    const applyTheme = (theme, isUserOverride = false) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+        if (icon) {
+            icon.className = theme === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+        if (isUserOverride) {
+            localStorage.setItem('mkc_theme', theme);
+        }
+    };
+
+    const getSystemTheme = () => {
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    };
+
+    // Initial detection on load
+    const savedTheme = localStorage.getItem('mkc_theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme(getSystemTheme());
     }
 
+    // Listen for live system theme preference changes (e.g. system dark/light schedule)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('mkc_theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+
+    // Manual Theme Toggle Button
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const icon = themeToggleBtn.querySelector('i');
-
-            if (currentTheme === 'light') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('mkc_theme', 'dark');
-                icon.className = 'fa-solid fa-moon';
-                showToast('Dark mode enabled');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('mkc_theme', 'light');
-                icon.className = 'fa-solid fa-sun';
-                showToast('Light mode enabled');
-            }
+            const currentTheme = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(newTheme, true);
+            showToast(`${newTheme === 'dark' ? 'Dark' : 'Light'} mode enabled`);
         });
     }
 });
