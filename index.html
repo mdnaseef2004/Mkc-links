@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markaz Knowledge City | Official Links</title>
+    <meta name="description" content="Official links hub for Markaz Knowledge City - Way to wisdom. Connect via WhatsApp, Facebook, YouTube, Instagram, Website & Location.">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- QR Code Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+    <!-- Ambient Background Waves -->
+    <div class="bg-decorations">
+        <div class="bg-blob blob-purple"></div>
+        <div class="bg-blob blob-teal"></div>
+        <div class="bg-blob blob-lime"></div>
+        <div class="bg-blob blob-orange"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Entrance Splash / Pop-up Logo Modal -->
+    <div id="splashModal" class="splash-modal">
+        <div class="splash-backdrop"></div>
+        <div class="splash-content">
+            <div class="splash-logo-wrapper">
+                <div class="pulse-ring ring-1"></div>
+                <div class="pulse-ring ring-2"></div>
+                <img src="MKC Logo.png" alt="Markaz Knowledge City Logo" class="splash-logo-img">
+            </div>
+            <h2 class="splash-title">MARKAZ KNOWLEDGE CITY</h2>
+            <p class="splash-tagline">Way to wisdom</p>
+            <button id="enterBtn" class="splash-enter-btn">
+                <span>Explore Links</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Top Bar Control -->
+        <header class="top-controls">
+            <button id="qrBtn" class="control-btn" title="Show QR Code">
+                <i class="fa-solid fa-qrcode"></i>
+            </button>
+            <button id="sharePageBtn" class="control-btn" title="Share Page">
+                <i class="fa-solid fa-share-nodes"></i>
+            </button>
+            <button id="themeToggleBtn" class="control-btn" title="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Top Center Logo & Title Header -->
+        <section class="top-header">
+            <div class="logo-container">
+                <div class="logo-glow"></div>
+                <img src="MKC Logo.png" alt="Markaz Knowledge City" class="top-logo-img">
+            </div>
+            <h1 class="main-title">MARKAZ KNOWLEDGE CITY</h1>
+            <p class="tagline">Way to wisdom</p>
+            <div class="header-divider">
+                <span class="dot dot-purple"></span>
+                <span class="dot dot-teal"></span>
+                <span class="dot dot-lime"></span>
+                <span class="dot dot-orange"></span>
+            </div>
+        </section>
+
+        <!-- Links Container -->
+        <main class="links-section">
+
+            <!-- 1. WhatsApp Channel -->
+            <div class="link-card card-whatsapp">
+                <div class="card-icon-box">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-badge">Official Updates</span>
+                    <h3 class="card-title">WhatsApp Channel</h3>
+                    <p class="card-subtitle">Join for latest news & announcements</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-icon-btn copy-btn" title="Copy Link" data-url="https://whatsapp.com/channel/0029Va5zsGU0rGiTUoAGXC0L">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <a href="https://whatsapp.com/channel/0029Va5zsGU0rGiTUoAGXC0L" target="_blank" rel="noopener noreferrer" class="action-btn">
+                        <span>Join</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Facebook Page -->
+            <div class="link-card card-facebook">
+                <div class="card-icon-box">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-badge">Social Media</span>
+                    <h3 class="card-title">Facebook</h3>
+                    <p class="card-subtitle">Follow our official Facebook page</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-icon-btn copy-btn" title="Copy Link" data-url="https://www.facebook.com/share/18YbP8MXp1/?mibextid=wwXIfr">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <a href="https://www.facebook.com/share/18YbP8MXp1/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="action-btn">
+                        <span>Follow</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. YouTube Channel -->
+            <div class="link-card card-youtube">
+                <div class="card-icon-box">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-badge">Video Channel</span>
+                    <h3 class="card-title">YouTube</h3>
+                    <p class="card-subtitle">Watch official videos @markazcity</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-icon-btn copy-btn" title="Copy Link" data-url="https://youtube.com/@markazcity?si=DgeEN8o7xzms0wVn">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <a href="https://youtube.com/@markazcity?si=DgeEN8o7xzms0wVn" target="_blank" rel="noopener noreferrer" class="action-btn">
+                        <span>Subscribe</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Instagram Profile -->
+            <div class="link-card card-instagram">
+                <div class="card-icon-box">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-badge">Photos & Reels</span>
+                    <h3 class="card-title">Instagram</h3>
+                    <p class="card-subtitle">@markaz.city</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-icon-btn copy-btn" title="Copy Link" data-url="https://www.instagram.com/markaz.city/">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <a href="https://www.instagram.com/markaz.city/" target="_blank" rel="noopener noreferrer" class="action-btn">
+                        <span>Follow</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Official Website -->
+            <div class="link-card card-website">
+                <div class="card-icon-box">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-badge">Main Portal</span>
+                    <h3 class="card-title">Official Website</h3>
+                    <p class="card-subtitle">www.markazknowledgecity.com</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-icon-btn copy-btn" title="Copy Link" data-url="https://www.markazknowledgecity.com/">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <a href="https://www.markazknowledgecity.com/" target="_blank" rel="noopener noreferrer" class="action-btn">
+                        <span>Visit</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. Google Maps Location -->
+            <div class="link-card card-location">
+                <div class="card-icon-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="card-text">
+                    <span class="card-badge">Directions</span>
+                    <h3 class="card-title">Google Maps Location</h3>
+                    <p class="card-subtitle">Kozhikode, Kerala, India</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-icon-btn copy-btn" title="Copy Link" data-url="https://maps.app.goo.gl/t2MKQK8SMVKcWr4j8">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <a href="https://maps.app.goo.gl/t2MKQK8SMVKcWr4j8" target="_blank" rel="noopener noreferrer" class="action-btn">
+                        <span>Navigate</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© Markaz Knowledge City • All rights reserved</p>
+            <p class="footer-tag">Way to wisdom</p>
+        </footer>
+    </div>
+
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card">
+            <button id="closeQrBtn" class="modal-close-btn">&times;</button>
+            <h3>Scan QR Code</h3>
+            <p>Scan to open Markaz Knowledge City links on your smartphone</p>
+            <div id="qrcode" class="qrcode-wrapper"></div>
+            <button id="downloadQrBtn" class="modal-action-btn">
+                <i class="fa-solid fa-download"></i> Save QR Code
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">Link copied to clipboard!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
